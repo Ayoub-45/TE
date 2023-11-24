@@ -3,8 +3,45 @@ import java.util.Scanner;
 /*******************************************
  * Completez le programme a partir d'ici.
  *******************************************/
-public class Tirelire{
-    
+class Tirelire{
+    private double montant;
+    public void  secouer(){
+        System.out.println("Bing bing");
+        if(montant>0)
+            System.out.println();
+        else    
+            return;
+    }
+    public void remplir(double mon){
+        if(mon>0)
+            montant+=mon;
+    }
+    public void vider(){
+        montant=0;
+    }
+    public void puiser(double mon){
+        if(mon <0) return;
+        else if(mon>montant)
+            vider();
+        else
+        montant-=mon;
+
+    }
+    public double getMontant() {
+        return montant;
+    }
+    public void afficher(){
+        if(montant==0)
+            System.out.println("Vous etes sans le sou.");
+        else
+            System.out.println("Vous avez :" +montant+" euros dans votre tirelire.");
+    }
+    public double calculerSolde (double budget){
+        if(budget<0) 
+         return montant;
+        else
+         return montant-budget;
+    }
 }
 
 /*******************************************
